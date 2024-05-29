@@ -1,0 +1,26 @@
+{
+  "links": {
+    "home": {
+      "title": "Beep",
+      "href": "/"
+    },
+    "github": {
+      "title": "Your project on Github",
+      "href": "https://gitlab.polytech.umontpellier.fr/beep"
+    }
+  },
+  "sponsors_sources": [
+  ],
+  "search": {
+  },
+  "advertising_sponsors": [
+    {
+      "link": "",
+      "logo": "",
+      "logo_dark": "",
+      "logo_styles": ""
+    }
+  ],
+  "fileEditBaseUrl": "https://gitlab.polytech.umontpellier.fr/beep/docs",
+  "copyright": "Beep"
+}

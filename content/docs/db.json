@@ -1,0 +1,13 @@
+[{
+    "permalink": "introduction/getting-started",
+    "title": "Introduction",
+    "contentPath": "./preface/introduction.md",
+    "category": "Preface"
+  },
+  {
+    "permalink": "introduction/contribution-guide",
+    "title": "Contribution Guide",
+    "contentPath": "./preface/contribution-guide.md",
+    "category": "Preface"
+  }
+]
