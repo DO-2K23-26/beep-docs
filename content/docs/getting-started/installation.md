@@ -1,4 +1,4 @@
-# Releases
+# Environment Variables
 
 :::warning
 This page is still under construction.

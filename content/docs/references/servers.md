@@ -1,4 +1,4 @@
-# Releases
+# Servers
 
 :::warning
 This page is still under construction.
