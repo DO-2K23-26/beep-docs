@@ -112,6 +112,36 @@
     "title": "Backups",
     "contentPath": "./deployment/backup.md",
     "category": "Deployment"
+  },
+{
+    "permalink": "back/redis",
+    "title": "Structure des données channels voice redis",
+    "contentPath": "./back/redis.md",
+    "category": "Back"
+  },
+  {
+    "permalink": "back/socket",
+    "title": "Protocole Socket [Voice]",
+    "contentPath": "./back/socket.md",
+    "category": "Back"
+  },
+  {
+    "permalink": "back/installation",
+    "title": "Prérequis et premier lancement",
+    "contentPath": "./back/install.md",
+    "category": "Back"
+  },
+  {
+    "permalink": "back/url",
+    "title": "Les URLS c'est quoi ?",
+    "contentPath": "./back/url.md",
+    "category": "Back"
+  },
+  {
+    "permalink": "back/featureVoice",
+    "title": "Channel communication voice video",
+    "contentPath": "./back/featureVoice.md",
+    "category": "Back"
   }
 
 ]
