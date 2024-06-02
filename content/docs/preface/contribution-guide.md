@@ -1,4 +1,5 @@
 # Contribution Guide
+
 _Pull requests, bug reports, and all other forms of contribution are welcomed and highly encouraged!_
 
 This guides serves to set clear expectations for everyone involved with the projecty so that we can improve it. Therefore, this guide will cover in a few steps the cycle of life of a feature.
@@ -6,19 +7,27 @@ This guides serves to set clear expectations for everyone involved with the proj
 :::note
 Every projects/services built in the scope of Beep **must** follow this contribution guide.
 These projects are :
+
 - [beep-app](https://gitlab.polytech.umontpellier.fr/beep/front)
 - [beep-api](https://gitlab.polytech.umontpellier.fr/beep/api)
 - [beep-sfu](https://gitlab.polytech.umontpellier.fr/beep/beep-rtc)
 - [beep-docs](https://gitlab.polytech.umontpellier.fr/beep/docs)
+
 :::
+
 ## TLDR
+
 A feature must pass by the following steps before shipping :
+
 1. An **issue**, describing in details a bug, or a feature request and what are the criteria validating the issue.
 2. A **merge request**, which is the implementation of the feature. A merge request can also be linked to a documentation detailling the issues encountered during the implementation and explaining some in-depth concepts.
 3. At least **two reviews**. These reviews must be done by two members that are not the feature developer.
 4. Once the merge request is merged, the commit **must be tagged** to be deployed into production.
+
 ## Git flow (trunk-based)
+
 The beep core team chose a **trunk-based** flow to version the project. To understand our decision please refer to this [ADR](https://file.notion.so/f/f/2679eb9e-5121-4ebf-8bd7-7ef6524a8805/3a563cbe-941c-41ed-bc57-afe7fc25251d/ADR_Git_workflow.pdf?id=a8b83d24-e30d-47de-bec5-12c9f45478f1&table=block&spaceId=2679eb9e-5121-4ebf-8bd7-7ef6524a8805&expirationTimestamp=1717459200000&signature=VVqL_Npb07ssVeR_GlsPtYcqSzY5Txs0Clm7IbTmfSk&downloadName=ADR+Git+workflow.pdf).
+
 ```mermaid
 ---
 title : Trunk based flow on Beep
@@ -34,7 +43,9 @@ gitGraph
 	commit id: "Release" tag: "1.0.0"
 	commit
 ```
+
 ## Issues
+
 ### Content
 Everything starts with an issue. An issue must contain a **description** of the feature or the bug that must be implemented, a definition of done, some ideas on how it should be implemented (facultative) and a difficulty/importance estimation A definition of done is a set of tests explaining how the feature/bug should be tested and validated.
 
@@ -112,7 +123,7 @@ Let's say that someone merged changes on your source branch which **must** be ma
 $ git pull --rebase origin main
 ```
 Unfortunately, some file are conflicting between your current branch and the branch you rebased on.
-To fix it, go to each file you need to fix, stage the changes and continue your rebase like that : 
+To fix it, go to each file you need to fix, stage the changes and continue your rebase like that :
 ```
 $ git pull --rebase origin main
 ⚠️ conflicts with main on index.ts
@@ -133,13 +144,51 @@ To deploy the feature you must tag the last commit related to the merge request 
 :::warning
 For now, the git flow to release a feature on the staging environment is far from perfect but for later, a feature MUST be tested in the staging environment before being shipped to the production environment.
 :::
-The CI/CD will execute the following actions : 
+The CI/CD will execute the following actions :
 1. Tests : It will lint and run the different tests defined in the project if there are any.
-2. Publish : 
-   - Artifact : It will build a Docker image able to run the application   
+2. Publish :
+   - Artifact : It will build a Docker image able to run the application
    - Helm : It will package an [helm chart](https://helm.sh/docs/intro/cheatsheet/#basic-interpretationscontext) describing the service infrastructure and specifying the new docker image to run.
 Once each step has been succeeded, make sure that the feature has been deployed correctly thanks to [argocd](https://argocd.duratm.com/).
+## Contribute to the documentation
+### Add content
+First you need to create an issue and a merge request as described earlier.
+Then, go to the `content/` folder and edit/create new files by respecting the following structure : 
+```
+.
+├── config.json
+├── docs                                  # folder containing all docs
+│   ├── <category-1>
+│   │   ├── images/
+│   │   ├── <doc-1>.md
+│   │   └── <doc-2>.md
+│   ├── <category-2>
+│   │   └── <doc-1>.md
+│   ├── db.json
+```
 
+To publish your documentation you then need to edit the `db.json` file by adding to the file a new JSON object : 
+```json
+[
+...
+{
+    "permalink": "<relative-url-to-your-doc>", // the prefix will be applied directly. See the `src/collection.ts` file for the collection prefix
+    "title": "<doc-title>",
+    "contentPath": "<path-to-your-doc>",
+    "category": "<doc-category>"
+}
+]
+```
 
+:::note
+The `docs` project follow the same flow as any other beep project, so to ship a new version of the doc follow the same rules as any other service.
+:::
 
-
+Before pushing your changes, make sure that your `.md` files follow the correct standards. To do so, you have two ways : 
+- **cli**: 
+  ```bash
+  npm install -g markdownlint-cli
+  cd content
+  markdownlint docs/
+```
+- **VSCode extenstion** : Install the [markdown lint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) extension.

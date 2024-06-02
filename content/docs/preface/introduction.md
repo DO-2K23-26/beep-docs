@@ -24,3 +24,9 @@ Nous abordons plusieurs points sur ce projet:
 - __Déploiement (CI/CD, Helm, ArgoCD)__
 - __Architecture__
 - __Front-end / Back-end__
+
+### Scope of this documentation
+This documentation isn't :
+- a place to debate or make technical decision: please prefer using `Activity` sections on merge requests or issues or use Discord.
+- a repository for internal choices : write an ADR with the validation of the current manager.
+- a draft : you need to review your contributions before publishing it
