@@ -5,7 +5,7 @@
     "contentPath": "./preface/introduction.md",
     "category": "Preface"
   },
-{
+  {
     "permalink": "introduction/releases",
     "title": "Releases",
     "contentPath": "./preface/releases.md",
@@ -17,7 +17,7 @@
     "contentPath": "./preface/contribution-guide.md",
     "category": "Preface"
   },
-{
+  {
     "permalink": "introduction/roadmap",
     "title": "Roadmap",
     "contentPath": "./preface/roadmap.md",
@@ -29,89 +29,88 @@
     "contentPath": "./getting-started/installation.md",
     "category": "Getting Started"
   },
-{
+  {
     "permalink": "getting-started/configuration",
     "title": "Configuration",
     "contentPath": "./getting-started/configuration.md",
     "category": "Getting Started"
   },
-{
+  {
     "permalink": "getting-started/environment-variables",
     "title": "Environment Variables",
     "contentPath": "./getting-started/environment-variables.md",
     "category": "Getting Started"
   },
-{
+  {
     "permalink": "concepts/webrtc",
     "title": "WebRTC & SFU",
     "contentPath": "./concepts/webrtc.md",
     "category": "Concepts"
   },
-{
+  {
     "permalink": "authentication/overview",
     "title": "Overview",
     "contentPath": "./authentication/overview.md",
     "category": "Authentication"
   },
-{
+  {
     "permalink": "authentication/authorization",
     "title": "Authorization",
     "contentPath": "./authentication/authorization.md",
     "category": "Authentication"
   },
-{
+  {
     "permalink": "references/overview",
     "title": "Overview",
     "contentPath": "./references/overview.md",
     "category": "References"
   },
-{
+  {
     "permalink": "references/channels",
     "title": "Channels",
     "contentPath": "./references/channels.md",
     "category": "References"
   },
-{
+  {
     "permalink": "references/servers",
     "title": "Servers",
     "contentPath": "./references/servers.md",
     "category": "References"
   },
-{
+  {
     "permalink": "references/users",
     "title": "Users",
     "contentPath": "./references/users.md",
     "category": "References"
   },
-{
+  {
     "permalink": "references/architecture",
     "title": "Architecture",
     "contentPath": "./deployment/architecture.md",
     "category": "Deployment"
   },
-{
+  {
     "permalink": "references/git-flow",
     "title": "Git Flow",
     "contentPath": "./deployment/git-flow.md",
     "category": "Deployment"
   },
-{
+  {
     "permalink": "references/monitoring",
     "title": "Monitoring",
     "contentPath": "./deployment/monitoring.md",
     "category": "Deployment"
   },
-{
+  {
     "permalink": "references/jobs",
     "title": "Jobs",
     "contentPath": "./deployment/jobs.md",
     "category": "Deployment"
   },
-{
+  {
     "permalink": "references/backup",
     "title": "Backups",
     "contentPath": "./deployment/backup.md",
     "category": "Deployment"
   }
-
 ]

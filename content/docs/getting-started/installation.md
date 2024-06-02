@@ -10,5 +10,3 @@ Vous pouvez installer Node.js à l'aide des [installateurs officiels](https://no
 node -v
 # v21.7.3
 ```
-
-## 
