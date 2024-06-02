@@ -1,6 +1,6 @@
 # Créer une lib, easy
 
-Auteur: HugoP 
+Auteur: HugoP
 Tag: front, nx
 
 Nx est parfois ingrat mais très utile. Voyons comment bien s'en servir.
@@ -32,7 +32,7 @@ rm *
 
 Créons un maintenant un composant react par exemple (toujours dans  `/libs/pouette/src/lib`):
 
-```
+```bash
 vi pouette-component.tsx
 ```
 
@@ -44,10 +44,10 @@ export interface PouetteComponentProps {}
 
 export function PouetteComponent(props: PouetteComponentProps) {
 return (
-	<div>
-		<h1>Welcome to Pouette!</h1>
-	</div>
-	)
+ <div>
+  <h1>Welcome to Pouette!</h1>
+ </div>
+ )
 }
 
 export default PouetteComponent
@@ -57,14 +57,14 @@ export default PouetteComponent
 Maintenant votre fichier créé il est nécessaire de le rendre disponible sur l'ensemble du projet pour l'import dans d'autre lib.
 Rendez-vous dans le dossier parent sinon depuis la racine du projet:
 
-```
+```bash
 cd libs/pouette/src/
 
 ```
 
 Utilisez votre meilleur éditeur de texte pour que le fichier `index.ts` ressemble à ça:
 
-```
+```bash
 export * from './lib/pouette-component'
 
 ```

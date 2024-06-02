@@ -33,7 +33,7 @@ Vous devriez arriver sur cette interface :
 
 ![Untitled](image/icone/Untitled%201.png)
 
-1. Rechercher l’icone souhaité : 
+1. Rechercher l’icone souhaité :
 
 ![Untitled](image/icone/Untitled%202.png)
 
@@ -47,9 +47,7 @@ Vous devriez arriver sur cette interface :
 import { Icon } from '@beep/ui'
 
 <Icon name="lucide:hash" className="w-4 h-4" />
+
 ```
 
-<aside>
 ⚠️ Notre composant utilise la propriété `name` alors que le composant que vous allez copier/coller utilise la propriété `icon`, tout fonctionne de la même façon, pensez juste à le modifier !
-
-</aside>

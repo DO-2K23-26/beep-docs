@@ -3,7 +3,7 @@
 Auteur: Dorian Grasset
 Tag: front
 
-Pour utiliser un composant, c’est très simple. Dans cet exemple, je vais essayer d’utiliser le composant `Button` dans un tout nouveau fichier qu’on nommera `Test.tsx`. 
+Pour utiliser un composant, c’est très simple. Dans cet exemple, je vais essayer d’utiliser le composant `Button` dans un tout nouveau fichier qu’on nommera `Test.tsx`.
 
 Commencez d’abord par importer le composant que vous souhaitez utiliser :
 
@@ -13,10 +13,7 @@ Commencez d’abord par importer le composant que vous souhaitez utiliser :
 import { Button } from '@beep/ui'
 ```
 
-<aside>
 💡 **D’où sort `@beep/ui` ?** C’est tout simplement un chemin personnalisé définis dans le fichier `tsconfig.base.json`. Il en existe plein d’autres et ils permettent de créer des raccourcis ou des alias pour référencer des répertoires ou des modules spécifiques dans ton projet.
-
-</aside>
 
 Par la suite, instanciez votre composant et ajoutez votre `Button`:
 
@@ -91,9 +88,6 @@ export default function Test() {
 }
 ```
 
-<aside>
 ⚠️ N’oubliez pas d’importer les énumérations du composant qui vous seront utiles.
-
-</aside>
 
 Bien joué ! Vous avez instancié votre composant ! 🎊

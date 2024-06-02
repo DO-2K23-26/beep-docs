@@ -3,11 +3,11 @@
 Auteur: Dorian Grasset, Théo Tchilinguirian
 Tag: front
 
-# Prerequisites
+## Prerequisites
 
 Vous devez avoir installé `pnpm` : `sudo npm install -g pnpm` pour l’installer si ce n’est pas déjà fait.
 
-## Lancer le front pour la première fois :
+## Lancer le front pour la première fois
 
 Clonez le repo et placez vous dans le dossier.
 

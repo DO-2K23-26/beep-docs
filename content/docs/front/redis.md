@@ -1,11 +1,11 @@
 # Structure des données channels voice redis
 
-Auteur: HugoP 
+Auteur: HugoP
 Tag: back, front
 
-# Redis
+## Redis
 
-Redis is a database stored in cache. So it is fast. 
+Redis is a database stored in cache. So it is fast.
 
 The other feature of redis is that datas are stored with a key:value style
 
@@ -17,7 +17,7 @@ We will use redis to store data of connected user in voice channels. I tried to 
 
 They will be stored like this in the database:
 
-```
+```javascript
 channel:chanId userId1:username1 userId2:username2 userId3:username3 ...
 ```
 

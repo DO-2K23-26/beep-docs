@@ -1,11 +1,11 @@
 # Channel/server URLs
 
-Auteur: HugoP 
+Auteur: HugoP
 Tag: front
 
 ## In Servers
 
-It would be something like this: 
+It would be something like this:
 
 ```json
 /channels/:serverId/:channelId
@@ -27,7 +27,7 @@ For the moment we don’t have private conversation.
 /channels/@me/:id
 ```
 
-The id here is the id of the private conversation 
+The id here is the id of the private conversation
 
 For example:
 
