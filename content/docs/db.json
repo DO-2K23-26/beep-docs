@@ -112,6 +112,24 @@
     "title": "Backups",
     "contentPath": "./deployment/backup.md",
     "category": "Deployment"
+  },
+{
+    "permalink": "git/issues",
+    "title": "Créer une issue",
+    "contentPath": "./git/issue.md",
+    "category": "Git"
+  },
+{
+    "permalink": "git/workflow",
+    "title": "Workflow",
+    "contentPath": "./git/workflow.md",
+    "category": "Git"
+  },
+{
+    "permalink": "git/utilisation",
+    "title": "Git c’est bien mais j’en fais quoi ?",
+    "contentPath": "./git/utilisation.md",
+    "category": "Git"
   }
 
 ]
