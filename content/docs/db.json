@@ -113,7 +113,7 @@
     "contentPath": "./deployment/backup.md",
     "category": "Deployment"
   },
-{
+  {
     "permalink": "front/url",
     "title": "Channel service URL",
     "contentPath": "./front/url.md",
