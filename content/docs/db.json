@@ -112,5 +112,83 @@
     "title": "Backups",
     "contentPath": "./deployment/backup.md",
     "category": "Deployment"
+  },
+{
+    "permalink": "front/url",
+    "title": "Channel service URL",
+    "contentPath": "./front/url.md",
+    "category": "Front"
+  },
+  {
+    "permalink": "front/stack",
+    "title": "Stack",
+    "contentPath": "./front/stack.md",
+    "category": "Front"
+  },
+  {
+    "permalink": "front/storybook",
+    "title": "Storybook",
+    "contentPath": "./front/storybook.md",
+    "category": "Front"
+  },
+  {
+    "permalink": "front/composant",
+    "title": "Utiliser un composant",
+    "contentPath": "./front/composant.md",
+    "category": "Front"
+  },
+  {
+    "permalink": "front/icone",
+    "title": "Utiliser une icône iconify",
+    "contentPath": "./front/icone.md",
+    "category": "Front"
+  },
+  {
+    "permalink": "front/lib",
+    "title": "Créer une lib, easy",
+    "contentPath": "./front/lib.md",
+    "category": "Front"
+  },
+  {
+    "permalink": "front/layout",
+    "title": "Différence entre un composant et un layout",
+    "contentPath": "./front/layout.md",
+    "category": "Front"
+  },
+  {
+    "permalink": "front/uiAndFeature",
+    "title": "Différence entre un dossier feature et un dossier ui",
+    "contentPath": "./front/uiAndFeature.md",
+    "category": "Front"
+  },
+  {
+    "permalink": "front/displayUser",
+    "title": "Display user in voice channels",
+    "contentPath": "./front/displayUser.md",
+    "category": "Front"
+  },
+  {
+    "permalink": "front/figma",
+    "title": "Figma des composants",
+    "contentPath": "./front/figma.md",
+    "category": "Front"
+  },
+  {
+    "permalink": "front/installation",
+    "title": "Prérequis et premier lancement",
+    "contentPath": "./front/install.md",
+    "category": "Front"
+  },
+  {
+    "permalink": "front/architecture",
+    "title": "Architecture du code",
+    "contentPath": "./front/architecture.md",
+    "category": "Front"
+  },
+  {
+    "permalink": "front/redis",
+    "title": "Structure des données channels voice redis",
+    "contentPath": "./front/redis.md",
+    "category": "Front"
   }
 ]
