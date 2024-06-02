@@ -1,5 +1,5 @@
 ---
-summary: "AdonisJS is a TypeScript-first web framework for Node.js. You can use it to create a full-stack web application or a JSON API server."
+summary: Beep est une plateforme de messagerie open-source. Ce projet propose une alternative libre à Discord !
 ---
 
 # Introduction
