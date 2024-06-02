@@ -24,8 +24,3 @@ spec:
             - name: http
               containerPort: {{ .Values.image.port }}
               protocol: TCP
-
-          lifecycle:
-            postStart:
-              exec:
-                command: ["/bin/sh", "-c", "node ace migration:run --force"]
