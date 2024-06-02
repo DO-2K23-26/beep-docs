@@ -7,10 +7,10 @@ image:
   repository: gitlab.polytech.umontpellier.fr:5050/beep/docs
   pullPolicy: Always
   tag: 056b6d57
-  port: 3333
+  port: 80
 
 service:
-  port: 3333
+  port: 80
   type: ClusterIP
 
 ingress:
