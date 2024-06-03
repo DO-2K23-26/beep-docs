@@ -13,7 +13,7 @@ To manage web socket connethe server re-emit in all sockets of the same room the
 
 ![schema-cada-2024-02-05-2005(9).png](./image/featureVoice/schema-cada-2024-02-05-2005(9).png)
 
-You can see here a simplified version of what is really happening in beep. Don’t be scarred about sockets.  
+You can see here a simplified version of what is really happening in beep. Don’t be scarred about sockets.
 
 ### Connection to rooms/channels
 
