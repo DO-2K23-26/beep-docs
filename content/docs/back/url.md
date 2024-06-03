@@ -1,6 +1,6 @@
 # Les URLs c’est quoi ?
 
-Auteur: HugoP 
+Auteur: HugoP
 Tag: back
 
 ## Chemin dans le front
@@ -26,7 +26,7 @@ Tag: back
 - `/authentication/send-email`
 - `/authentication/verify` (on register verify the email)
 
-### Channels
+### Channel
 
 - `/channels?${params}` get all channels (Si le paramètre ne vous est pas utile enlevez le)
 - `/channels/${id}?messages=true` get a channel and its messages

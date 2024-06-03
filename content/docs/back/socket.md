@@ -13,8 +13,8 @@ Le traitement doit être fait en conséquence selon le code d’erreur et/ou le 
 
 ```json
 {
-	"code": number,
-	"message": string
+ "code": number,
+ "message": string
 }
 ```
 
@@ -27,15 +27,15 @@ Le traitement doit être fait en conséquence selon le code d’erreur et/ou le 
 ### Join channel
 
 **Event : “**join_channel”
-**Payload :** 
+**Payload :**
 
 ```json
 {
-	"channel_id": string
+ "channel_id": string
 }
 ```
 
-**Error :** 
+**Error :**
 
 ```json
 {
@@ -47,11 +47,11 @@ Le traitement doit être fait en conséquence selon le code d’erreur et/ou le 
 ### Leave channel
 
 **Event : “leave**_channel”
-**Payload :** 
+**Payload :**
 
 ```json
 {
-	"channel_id": string
+ "channel_id": string
 }
 ```
 

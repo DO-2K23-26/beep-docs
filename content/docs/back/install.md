@@ -5,17 +5,17 @@ Tag: back
 
 Pour lancer le back vous devez impérativement avoir installé NodeJS avec une version supérieure à la version 20.6
 
-[https://docs.adonisjs.com/guides/getting-started/installation](https://docs.adonisjs.com/guides/getting-started/installation) 
+[https://docs.adonisjs.com/guides/getting-started/installation](https://docs.adonisjs.com/guides/getting-started/installation)
 
 Vous devez avoir pnpm installé ainsi que docker
 
-# Lorsque vous lancez pour la première fois le back en mode développement
+## Lorsque vous lancez pour la première fois le back en mode développement
 
-## Configuration du minio
+### Configuration du minio
 
 Après avoir cloné le repository placez vous dans `/api`
 
-Commencer par monter votre conteneur minio 
+Commencer par monter votre conteneur minio
 
 ```bash
 docker compose up -d minio
@@ -36,7 +36,7 @@ Créer un nouveau bucket dont le nom sera `app`.
 
 Voilà votre minio est fonctionnel !
 
-## Lancement du back
+### Lancement du back
 
 Créer un .env sous `/api`
 
@@ -97,7 +97,7 @@ Vous pouvez avoir une erreur à cette étape si vous avez déjà la base de donn
 node ace db:seed
 ```
 
-Lancer le back 
+Lancer le back
 
 ```bash
 pnpm run dev
