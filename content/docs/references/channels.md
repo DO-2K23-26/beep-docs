@@ -5,17 +5,14 @@ Les channels constituent une partie centrale de l'application `Beep`. Un channel
 Ce document détaille la structure, les fonctionnalités et les interactions du modoule channels, couvrant les aspects suivants:
 
 - __Model (SQL)__: Le schéma de données SQL utilisé pour stocker les informations des channels.
-- **API Routes**: Les points d'accès API permettant la gestion et l'interaction avec les channels.
-- **Services**: Les services gérant la logique métier des channels.
-- **Events and Real-time Communication**: L'intégration avec WebRTC / SFU et du SSE pour la communcation en temps réel.
-- **Security**: Les mécanismes de sécurité protégeant l'accès aux channels ainsi que de leurs créations.
-- **Exemples and Use Cases**: Des exemples pratiques et des cas d'utilisation illustrant les fonctionalités des channels.
-- **Troubleshooting**: Les solutions aux problèmes courants et une FAQ pour aider à résoudre les questions fréquentes
-
+- __API Routes__: Les points d'accès API permettant la gestion et l'interaction avec les channels.
+- __Services__: Les services gérant la logique métier des channels.
+- __Events and Real-time Communication__: L'intégration avec WebRTC / SFU et du SSE pour la communcation en temps réel.
+- __Security__: Les mécanismes de sécurité protégeant l'accès aux channels ainsi que de leurs créations.
+- __Exemples and Use Cases__: Des exemples pratiques et des cas d'utilisation illustrant les fonctionalités des channels.
+- __Troubleshooting__: Les solutions aux problèmes courants et une FAQ pour aider à résoudre les questions fréquentes
 
 Grâce à cette documentation, les développeurs pourront comprendre en profondeur le fonctionnement des channels, et les intégrer efficacement.
-
-
 
 ## Modèle SQL
 Le modèle de données SQL pour les channels de `Beep` est conçu pour capturer toutes les informations nécessaires sur chaque channel, y compris ses attributs principaux, ses relations avec d'autres entités et ses contraintes de données. Voici un aperçu du schéma du modèle `Channel`
@@ -38,19 +35,17 @@ Le modèle de données SQL pour les channels de `Beep` est conçu pour capturer 
 
 Le modèle de données pour les channels inclut des relations importantes avec d'autres entités du système:
 
-- **users**: Chaque channel est associé à un vecteur d'utilisateurs. Cette relation est représentée par la clef `users` pointant vers une liste de `User`.
-- **server**: Chaque channel est lié à un server, c'est une contrainte qui stipule qu'aucun server ne peut être rattaché à aucun server.
-- **messages**: Un channel peut contenir un vecteur de messages. Cett relation est représentée par la clef `messages` pointant vers une liste de `Message`.
+- __users__: Chaque channel est associé à un vecteur d'utilisateurs. Cette relation est représentée par la clef `users` pointant vers une liste de `User`.
+- __server__: Chaque channel est lié à un server, c'est une contrainte qui stipule qu'aucun server ne peut être rattaché à aucun server.
+- __messages__: Un channel peut contenir un vecteur de messages. Cett relation est représentée par la clef `messages` pointant vers une liste de `Message`.
 
 Ces relatiojns permettent de structurer les données de manière cohérente et de garantir l'intégrité entre les différents enttiés du système.
 
 Cette section offre une vue d’ensemble complète sur le modèle SQL des channels, permettant aux développeurs de comprendre comment les données des channels sont stockées, structurées et reliées aux autres entités du projet `Beep`.
 
-
 ## Services & Validations
 Les services sont essentiels pour encapsuler la logique métier liée aux channels. Ils permettent de centraliser et de réutiliser le code, facilitant ainsi la maintenance
 et l'évolution de l'application. Voici un aperçu des principaux services utilisés pour gérer les channels.
-
 
 ```ts
 interface ChannelServiceContract {
@@ -98,3 +93,4 @@ type SubscribeChannelSchema = {
 type IndexChannelSchema = {
     
 }
+```
