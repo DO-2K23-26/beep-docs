@@ -72,6 +72,12 @@
     "category": "References"
   },
   {
+    "permalink": "references/messages",
+    "title": "Messages",
+    "contentPath": "./references/messages.md",
+    "category": "References"
+  },
+  {
     "permalink": "references/servers",
     "title": "Servers",
     "contentPath": "./references/servers.md",
