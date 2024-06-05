@@ -14,6 +14,18 @@ containing SQL instructions.
 ### Consistency
 >Ensures that all databases (production, test, development) are synchronized and consistent.
 
+## Important: Avoid Rolling Back Migrations in Production
+
+Performing a rollback during development is perfectly fine since there is no fear of data loss. However, performing a rollback in production is not an option in most cases. Consider the following example:
+
+- You create and run a migration to set up the users table.
+- Over time, this table has received data since the app is running in production.
+- Your product has evolved, and now you want to add a new column to the users table.
+
+You cannot simply roll back, edit the existing migration, and re-run it because the rollback will drop the users table and all its data.
+
+Instead, you should create a new migration file to alter the existing users table by adding the required column. In other words, migrations should always move forward.
+
 ## Usage with Adonis
 
 #### Creating a Migration:
@@ -120,9 +132,16 @@ In this example, the run method manually creates an admin user and a regular use
 
 #### Refresh Migrations:
 
-To refresh the database, you can run the following command, which rolls back all migrations and re-runs them:
+To roll back all migrations and re-run them, you can run the following command:
 ```bash
 node ace migration:refresh
+```
+
+#### Fresh Migrations:
+
+To drop all tables and re-run all migrations, you can run the following command:
+```bash
+node ace migration:fresh
 ```
 
 #### Resetting Migrations:
