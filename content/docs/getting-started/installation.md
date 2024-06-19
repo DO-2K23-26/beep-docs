@@ -99,3 +99,30 @@ node ace migration:run
 ```bash
 pnpm run dev
 ```
+
+## Setting up the Frontend
+
+1. Install the dependencies
+
+```bash
+pnpm install
+```
+
+2. Provide the environment variables
+
+```bash
+touch .env
+```
+
+```toml
+// title: Environment variables for the frontend
+VITE_BACKEND_URL=http://localhost:3333/
+```
+
+3. Launch the Frontend
+
+```bash
+pnpm start
+```
+
+You should be ready to go !
