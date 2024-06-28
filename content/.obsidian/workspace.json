@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/preface/introduction.md",
+                "file": "docs/preface/contribution-guide.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/preface/introduction.md",
+                "file": "docs/preface/contribution-guide.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/preface/introduction.md",
+                "file": "docs/preface/contribution-guide.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/preface/introduction.md"
+                "file": "docs/preface/contribution-guide.md"
               }
             }
           }
@@ -146,16 +146,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ddfa34d2d1d02857",
+  "active": "d9dd8b2c00a68d98",
   "lastOpenFiles": [
+    "Untitled.md",
+    "docs/preface/contribution-guide.md",
+    "docs/preface/images/mr.png",
+    "docs/preface/images/kanban.png",
+    "docs/preface/images/issue.png",
+    "docs/preface/images/activity.png",
+    "docs/preface/images",
+    "docs/preface/introduction.md",
+    "docs/concepts/webrtc.md",
+    "docs/getting-started/installation.md",
     "sponsors.json",
     "docs/introduction.md",
     "docs/getting-started/environment-variables.md",
-    "docs/preface/contribution-guide.md",
-    "docs/preface/introduction.md",
     "docs/preface/Test.md",
-    "Untitled.md",
-    "docs/getting-started/installation.md",
     "docs/authentication/overview.md",
     "docs/authentication/authorization.md",
     "docs/cat-gif-loop-maru_grande.webp"
