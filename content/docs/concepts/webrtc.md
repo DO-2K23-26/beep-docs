@@ -113,9 +113,41 @@ SFU transmission can be broken down into three steps :
 1. **Signalling** : each peers need to declare their presence to the media server so it can establish an ICE connection with the other peers.
 2. **Session connection** : once the peer has been correctly signalled, the session is established and data is ready to be sent to the peer and by the peer.
 3. **Streaming** : this is the step where data is being exchanged.
+
+```mermaid
+sequenceDiagram
+
+Peer->>Peer: Create local offer and set it
+
+critical HTTP exchange
+
+Peer->>Server: Send offer with auth token
+
+Server->>Server: Resolve other peers offer
+
+Server-->>Peer: SDP Answer
+
+Peer->>Peer: Set remote description
+
+end
+
+Note over Peer,Server: Data channel initialized
+
+critical Exchange through data channel
+
+Note over Peer,Server: Renegociate
+
+loop Every peer
+
+Server->>Peer: add track
+
+Peer->>Peer: subscribe track
+
+end
+
+end
+```
 ### Signalling
-
-
 #### Authentication
 
 #### Signals
