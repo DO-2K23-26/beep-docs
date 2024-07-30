@@ -1,6 +1,6 @@
 .gitversion_function:
   image:
-    name: gittools/gitversion
+    name: gittools/gitversion:5.12.0
     entrypoint: [""]
   stage: .pre
   variables:

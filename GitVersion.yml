@@ -2,7 +2,7 @@ assembly-versioning-scheme: MajorMinorPatch
 assembly-file-versioning-scheme: MajorMinorPatch
 mode: ContinuousDeployment
 tag-prefix: "[vV]"
-continuous-delivery-fallback-label: ci
+continuous-delivery-fallback-tag: ci
 major-version-bump-message: '\+semver:\s?(breaking|major)'
 minor-version-bump-message: '\+semver:\s?(feature|minor)'
 patch-version-bump-message: '\+semver:\s?(fix|patch)'
@@ -15,8 +15,9 @@ commit-message-incrementing: Enabled
 branches:
   develop:
     mode: ContinuousDeployment
-    label: alpha
+    tag: alpha
     increment: Minor
+    prevent-increment-of-merged-branch-version: false
     track-merge-target: true
     regex: ^dev(elop)?(ment)?$
     source-branches: []
@@ -26,8 +27,9 @@ branches:
     pre-release-weight: 0
   main:
     mode: ContinuousDeployment
-    label: ""
+    tag: ""
     increment: Patch
+    prevent-increment-of-merged-branch-version: true
     track-merge-target: false
     regex: ^master$|^main$
     source-branches:
@@ -39,8 +41,9 @@ branches:
     pre-release-weight: 55000
   release:
     mode: ContinuousDeployment
-    label: beta
+    tag: beta
     increment: None
+    prevent-increment-of-merged-branch-version: true
     track-merge-target: false
     regex: ^releases?[/-]
     source-branches:
@@ -54,7 +57,7 @@ branches:
     pre-release-weight: 30000
   feature:
     mode: ContinuousDeployment
-    label: "{BranchName}"
+    tag: "{BranchName}"
     increment: Inherit
     regex: ^features?[/-]
     source-branches:
@@ -67,9 +70,9 @@ branches:
     pre-release-weight: 30000
   pull-request:
     mode: ContinuousDeployment
-    label: PullRequest
+    tag: PullRequest
     increment: Inherit
-    label-number-pattern: '[/-](?<number>\d+)'
+    tag-number-pattern: '[/-](?<number>\d+)'
     regex: ^(pull|pull\-requests|pr)[/-]
     source-branches:
       - develop
@@ -81,8 +84,9 @@ branches:
     pre-release-weight: 30000
   hotfix:
     mode: ContinuousDeployment
-    label: beta
+    tag: beta
     increment: Patch
+    prevent-increment-of-merged-branch-version: false
     track-merge-target: false
     regex: ^hotfix(es)?[/-]
     source-branches:
@@ -96,8 +100,9 @@ branches:
     pre-release-weight: 30000
   support:
     mode: ContinuousDeployment
-    label: ""
+    tag: ""
     increment: Patch
+    prevent-increment-of-merged-branch-version: true
     track-merge-target: false
     regex: ^support[/-]
     source-branches:
