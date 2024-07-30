@@ -17,7 +17,6 @@ branches:
     mode: ContinuousDeployment
     label: alpha
     increment: Minor
-    prevent-increment-of-merged-branch-version: false
     track-merge-target: true
     regex: ^dev(elop)?(ment)?$
     source-branches: []
@@ -29,7 +28,6 @@ branches:
     mode: ContinuousDeployment
     label: ""
     increment: Patch
-    prevent-increment-of-merged-branch-version: true
     track-merge-target: false
     regex: ^master$|^main$
     source-branches:
@@ -43,7 +41,6 @@ branches:
     mode: ContinuousDeployment
     label: beta
     increment: None
-    prevent-increment-of-merged-branch-version: true
     track-merge-target: false
     regex: ^releases?[/-]
     source-branches:
@@ -86,7 +83,6 @@ branches:
     mode: ContinuousDeployment
     label: beta
     increment: Patch
-    prevent-increment-of-merged-branch-version: false
     track-merge-target: false
     regex: ^hotfix(es)?[/-]
     source-branches:
@@ -102,7 +98,6 @@ branches:
     mode: ContinuousDeployment
     label: ""
     increment: Patch
-    prevent-increment-of-merged-branch-version: true
     track-merge-target: false
     regex: ^support[/-]
     source-branches:
