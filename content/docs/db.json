@@ -48,16 +48,28 @@
     "category": "Concepts"
   },
   {
-    "permalink": "authentication/overview",
+    "permalink": "security/overview",
     "title": "Overview",
-    "contentPath": "./authentication/overview.md",
-    "category": "Authentication"
+    "contentPath": "./security/overview.md",
+    "category": "Security"
   },
   {
-    "permalink": "authentication/authorization",
+    "permalink": "security/authentication",
+    "title": "Authentication",
+    "contentPath": "./security/authentication.md",
+    "category": "Security"
+  },
+  {
+    "permalink": "security/identification",
+    "title": "Identification",
+    "contentPath": "./security/identification.md",
+    "category": "Security"
+  },
+  {
+    "permalink": "security/authorization",
     "title": "Authorization",
-    "contentPath": "./authentication/authorization.md",
-    "category": "Authentication"
+    "contentPath": "./security/authorization.md",
+    "category": "Security"
   },
   {
     "permalink": "references/overview",

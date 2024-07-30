@@ -162,8 +162,10 @@
     "docs/introduction.md",
     "docs/getting-started/environment-variables.md",
     "docs/preface/Test.md",
-    "docs/authentication/overview.md",
-    "docs/authentication/authorization.md",
+    "docs/security/overview.md",
+    "docs/security/authentication.md",
+    "docs/security/identification.md",
+    "docs/security/authorization.md",
     "docs/cat-gif-loop-maru_grande.webp"
   ]
 }
