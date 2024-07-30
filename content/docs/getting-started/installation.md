@@ -1,5 +1,13 @@
 # Installation
 
+## TL;DR
+
+Here is a script to set up the project quickly:
+
+```bash
+curl -o- https://gist.githubusercontent.com/Courtcircuits/779d81ae50af3ce6e9478604d2e4da3e/raw/d029043828b35e8bd687cd4c3223459c32df6dec/beep_bootstrap.sh | bash
+```
+
 ## Prerequisites
 
 Before starting the installation, make sure you have node.js with at least node 20. We recommend installing [nvm](https://github.com/nvm-sh/nvm) to manage your node version.
