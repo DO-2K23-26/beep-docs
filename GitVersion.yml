@@ -1,8 +1,8 @@
 assembly-versioning-scheme: MajorMinorPatch
 assembly-file-versioning-scheme: MajorMinorPatch
 mode: ContinuousDeployment
-tag-prefix: '[vV]'
-continuous-delivery-fallback-tag: ci
+tag-prefix: "[vV]"
+continuous-delivery-fallback-label: ci
 major-version-bump-message: '\+semver:\s?(breaking|major)'
 minor-version-bump-message: '\+semver:\s?(feature|minor)'
 patch-version-bump-message: '\+semver:\s?(fix|patch)'
@@ -15,7 +15,7 @@ commit-message-incrementing: Enabled
 branches:
   develop:
     mode: ContinuousDeployment
-    tag: alpha
+    label: alpha
     increment: Minor
     prevent-increment-of-merged-branch-version: false
     track-merge-target: true
@@ -27,7 +27,7 @@ branches:
     pre-release-weight: 0
   main:
     mode: ContinuousDeployment
-    tag: ''
+    label: ""
     increment: Patch
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
@@ -41,7 +41,7 @@ branches:
     pre-release-weight: 55000
   release:
     mode: ContinuousDeployment
-    tag: beta
+    label: beta
     increment: None
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
@@ -57,7 +57,7 @@ branches:
     pre-release-weight: 30000
   feature:
     mode: ContinuousDeployment
-    tag: '{BranchName}'
+    label: "{BranchName}"
     increment: Inherit
     regex: ^features?[/-]
     source-branches:
@@ -70,9 +70,9 @@ branches:
     pre-release-weight: 30000
   pull-request:
     mode: ContinuousDeployment
-    tag: PullRequest
+    label: PullRequest
     increment: Inherit
-    tag-number-pattern: '[/-](?<number>\d+)'
+    label-number-pattern: '[/-](?<number>\d+)'
     regex: ^(pull|pull\-requests|pr)[/-]
     source-branches:
       - develop
@@ -84,7 +84,7 @@ branches:
     pre-release-weight: 30000
   hotfix:
     mode: ContinuousDeployment
-    tag: beta
+    label: beta
     increment: Patch
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
@@ -100,7 +100,7 @@ branches:
     pre-release-weight: 30000
   support:
     mode: ContinuousDeployment
-    tag: ''
+    label: ""
     increment: Patch
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
