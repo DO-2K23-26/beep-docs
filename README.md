@@ -1,6 +1,6 @@
-# OOmade documentation
+# Beep documentation
 
-Ce repository retrace la documentation technique ainsi que les spécifications fonctionnelles des projets OOmade.
+Ce repository retrace la documentation technique ainsi que les spécifications fonctionnelles des projets Beep.
 
 Cette documentation est rédigée en markdown et est accessible à tous les collaborateurs ayant la permission keycloak
 d'accéder à celle-ci.
