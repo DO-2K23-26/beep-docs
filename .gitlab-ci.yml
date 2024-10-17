@@ -1,92 +1,76 @@
 stages:
-- test
-- publish
-- deploy
+  - test
+  - publish
+  - deploy
 
 include:
-- local: 'gitversion-ci-cd-plugin-extension.gitlab-ci.yml'
+  - local: "gitversion-ci-cd-plugin-extension.gitlab-ci.yml"
 
 workflow:
   rules:
-  - if: '$CI_COMMIT_TAG =~ /^[0-9]+\.[0-9]+\.[0-9]+$/'
-    variables:
-      DEPLOY_VARIABLE: production
-      CHART_NAME: beep-docs
-  - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_COMMIT_TAG =~ /^[0-9]+\.[0-9]+\.[0-9]+$/'
+      variables:
+        DEPLOY_VARIABLE: production
+        CHART_NAME: beep-docs
+    - if: '$CI_PIPELINE_SOURCE == "push"'
 
 lint:
   stage: test
-  tags:
-    - do
-    - docs
-    - beep
   image: node:21
   script:
-  - npm install -g markdownlint-cli
-  - cd content
-  - markdownlint docs/
+    - npm install -g markdownlint-cli
+    - cd content
+    - markdownlint docs/
 
 determineversion:
   stage: .pre
-  tags:
-    - do
-    - docs
-    - beep
   rules:
-  # - if: '$CI_COMMIT_BRANCH == "main" && $CI_PIPELINE_SOURCE == "merge_request_event"'
-  # - if: '$CI_COMMIT_BRANCH == "feat/ci-environment"'
-  - if: $CI_COMMIT_TAG
+    # - if: '$CI_COMMIT_BRANCH == "main" && $CI_PIPELINE_SOURCE == "merge_request_event"'
+    # - if: '$CI_COMMIT_BRANCH == "feat/ci-environment"'
+    - if: $CI_COMMIT_TAG
   extends: .gitversion_function
 
 build-publish-image:
   stage: publish
-  tags:
-    - do
-    - docs
-    - beep
   rules:
-  - if: $CI_COMMIT_TAG
+    - if: $CI_COMMIT_TAG
   image:
     name: gcr.io/kaniko-project/executor:v1.14.0-debug
     entrypoint: [""]
   dependencies:
-  - determineversion
+    - determineversion
   script:
-  - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
-  - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:$GitVersion_MajorMinorPatch
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:$GitVersion_MajorMinorPatch
   environment:
     name: $DEPLOY_VARIABLE
 
 package-publish-helm:
   stage: publish
-  tags:
-    - do
-    - docs
-    - beep
   rules:
-  # - if: '$CI_COMMIT_BRANCH == "main" && $CI_PIPELINE_SOURCE == "merge_request_event"'
-  # - if: '$CI_COMMIT_BRANCH == "feat/ci-environment"'
-  - if: $CI_COMMIT_TAG
+    # - if: '$CI_COMMIT_BRANCH == "main" && $CI_PIPELINE_SOURCE == "merge_request_event"'
+    # - if: '$CI_COMMIT_BRANCH == "feat/ci-environment"'
+    - if: $CI_COMMIT_TAG
   image: alpine/helm:latest
   dependencies:
-  - determineversion
+    - determineversion
   script:
-  - wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O yq && chmod +x ./yq
-  - export VERSION=$GitVersion_MajorMinorPatch
-  # Echo pour débogage des variables d'environnement
-  - "echo \"URL_ENDPOINT: $URL_ENDPOINT\""
-  - "echo \"VERSION: $VERSION\""
-  - "echo \"CHART_NAME: $CHART_NAME\""
-  # Extraire le domaine de API_URL_ENDPOINT
-  - DOMAIN=$(echo $URL_ENDPOINT | awk -F[/:] '{print $4}')
-  - "echo \"Extracted DOMAIN: $DOMAIN\""
-  # Modifier le fichier values.yaml
-  - ls
-  - ./yq -i ".ingress.hosts[0].host=\"$DOMAIN\"" helm/docs/values.yaml
-  - ./yq -i ".name=\"$CHART_NAME\"" helm/docs/Chart.yaml
-  # Vérifier le contenu de values.yaml après modification
-  - cat helm/docs/values.yaml
-  - helm package helm/docs --version $VERSION --app-version $VERSION
-  - 'curl --request POST --user gitlab-ci-token:$CI_JOB_TOKEN --form "chart=@$CHART_NAME-$VERSION.tgz" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/api/$DEPLOY_VARIABLE/charts"'
+    - wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O yq && chmod +x ./yq
+    - export VERSION=$GitVersion_MajorMinorPatch
+    # Echo pour débogage des variables d'environnement
+    - 'echo "URL_ENDPOINT: $URL_ENDPOINT"'
+    - 'echo "VERSION: $VERSION"'
+    - 'echo "CHART_NAME: $CHART_NAME"'
+    # Extraire le domaine de API_URL_ENDPOINT
+    - DOMAIN=$(echo $URL_ENDPOINT | awk -F[/:] '{print $4}')
+    - 'echo "Extracted DOMAIN: $DOMAIN"'
+    # Modifier le fichier values.yaml
+    - ls
+    - ./yq -i ".ingress.hosts[0].host=\"$DOMAIN\"" helm/docs/values.yaml
+    - ./yq -i ".name=\"$CHART_NAME\"" helm/docs/Chart.yaml
+    # Vérifier le contenu de values.yaml après modification
+    - cat helm/docs/values.yaml
+    - helm package helm/docs --version $VERSION --app-version $VERSION
+    - 'curl --request POST --user gitlab-ci-token:$CI_JOB_TOKEN --form "chart=@$CHART_NAME-$VERSION.tgz" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/api/$DEPLOY_VARIABLE/charts"'
   environment:
     name: $DEPLOY_VARIABLE
