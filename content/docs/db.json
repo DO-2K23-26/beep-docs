@@ -124,11 +124,5 @@
     "title": "Backups",
     "contentPath": "./deployment/backup.md",
     "category": "Deployment"
-  },
-  {
-    "permalink": "webrtc/visioconference",
-    "title": "Visioconference",
-    "contentPath": "./webrtc/visioconference.md",
-    "category": "WebRTC"
   }
 ]
