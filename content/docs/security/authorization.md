@@ -1,6 +1,6 @@
 # Authorization
 
-Beep makes use of ABAC (PBAC?)
+Beep implements PBAC as an authorizations system to manage permissions concerns that apply while using Beep.
 
 ## Glossary
 
@@ -95,3 +95,5 @@ ABAC can be done/implemented through/within PBAC: the policy simply includes all
 
 I believe roles necessitate PBAC too... They can't be implemented in ABAC, since they are server and user-specific
 permissions on channels VS permissions on channel instances
+
+**TODO: handle case of 1 action applied on 2 or more subjects (another *user*'s *message*(=channel content) in a channel. How to handle this through policies?** Are policies powerful enough to concisely handle multiple roles (multiple instances of multiple permissions), subjects and subject instances for 1 action?
