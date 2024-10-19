@@ -1,5 +1,15 @@
 # System messages
 
+## Glossary
+- Information message: A type of system message to communicate general or specific information to users.
+  - Pinning message: A message that informs every user in a channel that a message was pinned, which message, and by whom.
+  - Beep update message: A message sent in private to every users to inform them of the new features and changes made to Beep.
+  - Server administration message: A message sent in the default, read-owners-only "system" channel that informs server owners of changes to how Beep handles servers, or to servers themselves, that may affect server administration.
+- Alert message:
+  - Scam server alert: A message sent in private to a user the moment they join a community deemed dangerous to their Beep account and personal information security, and integrity.
+- Warning message:
+  - Admonition message: A message sent in private to a user after they have been reported too many times.
+
 ## What are system messages?
 System messages, also called system notifications, or internal notifications, is an abstract component of Beep.
 In practice, it is seen by users as a message written by none of the server members, but by Beep itself.
