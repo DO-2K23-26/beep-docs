@@ -42,6 +42,18 @@
     "category": "Getting Started"
   },
   {
+    "permalink": "concepts/overview",
+    "title": "Overview",
+    "contentPath": "./concepts/overview.md",
+    "category": "Concepts"
+  },
+  {
+    "permalink": "concepts/system-messages",
+    "title": "System messages",
+    "contentPath": "./concepts/system-messages.md",
+    "category": "Concepts"
+  },
+  {
     "permalink": "concepts/webrtc",
     "title": "WebRTC & SFU",
     "contentPath": "./concepts/webrtc.md",
