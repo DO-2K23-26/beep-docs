@@ -62,8 +62,10 @@ Default roles:
 - Member:
   - CanView the default server channel ("#general").
   - CanWrite in the default server channel.
-- Admin:
-  - Has every possible permissions
+- Owner:
+  - Has every possible permissions, including the ability to:
+    - Make other members into Owners.
+    - Execute actions on the concerned server instance (update, delete).
 
 ### Subject instance-specific permissions
 (TO VERIFIY): i believe this is what sets ABAC and PBAC apart.
