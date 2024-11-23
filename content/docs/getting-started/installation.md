@@ -8,6 +8,18 @@ Here is a script to set up the project quickly:
 curl -o- https://raw.gists.app/2e9c71e2-ecb3-4e26-8a08-5a7ff4df97a4 | bash
 ```
 
+To run this script, you need to have the following installed:
+- [`node` and `npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+- [`pnpm`](https://pnpm.io/installation).
+- [Minio client](https://min.io/docs/minio/linux/reference/minio-mc.html) (`mc`).
+- `openssl`.
+- `git`.
+- [Docker Engine](https://docs.docker.com/engine/install/) (`docker` and `docker-compose`).
+- [`jq` JSON stream editor](https://jqlang.github.io/jq/download/).
+
+Known issues:
+- Minio client's `mc` command may conflict with [Midnight Commander](https://midnight-commander.org/) if it is already installed; in which case the Minio client command will be `mcli`.
+
 ## Prerequisites
 
 Before starting the installation, make sure you have node.js with at least node 20. We recommend installing [nvm](https://github.com/nvm-sh/nvm) to manage your node version.
